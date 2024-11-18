@@ -13,7 +13,7 @@ func TestGetAPIKey(t *testing.T) {
 		wantRes string
 		wantErr error
 	}{
-		"valid": {input: http.Header{"Authorization": []string{"ApiKey api_key"}, "Content-Type":[]string{"application/json"}}, wantRes: "api_key", wantErr: nil},
+		"valid": {input: http.Header{"Authorization": []string{"ApiKe api_key"}, "Content-Type":[]string{"application/json"}}, wantRes: "api_key", wantErr: nil},
 		"invalid auth header format": {input: http.Header{"Authorization": []string{"bad api_key"}}, wantRes: "", wantErr: errors.New("malformed authorization header")},
 		"no auth header": {input: http.Header{"Content-Type":[]string{"application/json"}}, wantRes: "", wantErr: errors.New("no authorization header included")},
 	}
