@@ -18,7 +18,6 @@ jobs:
         with:
           go-version: "1.23.0"
 
-      - name: Run go version
+      - name: Go Tests
         run: |
-          go version
-          exit 0
+          go test./...
